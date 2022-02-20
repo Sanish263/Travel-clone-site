@@ -17,8 +17,8 @@ export default function Home({ posts }: Props) {
   return (
     <div className=" flex w-full h-full bg-gray-50 md:bg-white">
       <Head>
-        <title>Travel</title>
-        <link rel="icon" href="/favicon.ico" />
+        <title>Paakhi</title>
+        <link rel="icon" href="/paakhimage.ico" />
       </Head>
       <div className="overflow-y-scroll overflow-hidden scrollbar-hide scroll-smooth">
 <Header />
