@@ -38,7 +38,7 @@ export default function Home({ posts }: Props) {
   <motion.div
                   initial={{ opacity: 0, y: 100 }} 
                   whileInView = {{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.2 }}
+                  viewport={{ once: true, amount: 0.1 }}
                   transition = {{ type: "tween", duration: 0.7 }}
   className="md:flex space-y-0 p-10 text-xl md:text-2xl font-semibold justify-around truncate">
     <div className="flex-col md:space-y-20 space-y-10 md:pl-6 md:pt-9">
