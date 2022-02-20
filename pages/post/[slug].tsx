@@ -74,9 +74,9 @@ function Post({ post }: Props) {
             <Header />
 
             <motion.article 
-            initial="exit" whileInView="enter" exit="exit"
+            initial="exit" animate="enter" exit="exit"
             className=' max-w-[76rem] mx-auto p-5'>
-                <motion.div variants={textVariants} viewport={{ once: true, amount: 0.3 }}>
+                <motion.div variants={textVariants}>
                 <h1 className=' text-4xl font-semibold mt-10 mb-3'>{post.title}</h1>
                 <h2 className=' text-xl font-light text-gray-500 mb-2'>{post.description}
                 </h2>      
@@ -85,14 +85,12 @@ function Post({ post }: Props) {
 
                 <motion.img
                 variants={imageVariants}
-                viewport={{ once: true, amount: 0.3 }}
                     className= "mt-16"
                     src={urlFor(post.postImage).url()!} alt="" 
                     />
 
                 <motion.div 
                 variants={textVariants}
-                viewport={{ once: true, amount: 0.3 }}
                 className=' mt-10'>
                     <PortableText 
                     className=""

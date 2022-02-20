@@ -32,10 +32,10 @@ function about() {
         <div className="">
             <Header />
             <motion.div 
-            initial="exit" whileInView="enter" exit="exit"
+            initial="exit" animate="enter" exit="exit"
             className="">
                 <motion.div 
-                variants={textVariants} viewport={{ once: true, amount: 0.3 }}
+                variants={textVariants}
                 className="flex flex-col max-w-7xl mx-auto px-5 md:px-12 pt-9">
                     <h1 className=" text-[33px] font-semibold">About Me</h1>
                     <h1 className=" justify-start -mt-4 text-green-500 text-xl font-[1000]">__________</h1>
@@ -43,7 +43,6 @@ function about() {
 
                 <motion.div 
                         variants={imageVariants}
-                        viewport={{ once: true, amount: 0.3 }}
                 className=" flex flex-col md:flex-row max-w-7xl mx-auto px-5 md:px-12 pt-9">
                     <img className=" h-[28rem] w-96 bg-cover object-cover" src="https://i0.wp.com/paakhitravels.com/wp-content/uploads/2022/01/IMG-20210416-WA0010.jpg?resize=894%2C1024&ssl=1" alt="" />
                     <div className=" flex flex-col md:flex-row items-center relative">
@@ -55,11 +54,11 @@ function about() {
                 </motion.div>
 
                 <motion.hr  
-                variants={textVariants} viewport={{ once: true, amount: 0.3 }}
+                variants={textVariants} 
                 className=" flex lg:max-w-7xl md:mx-auto lg:mx-[360px] mt-5 border border-gray-400"/>
 
                 <motion.div 
-                variants={textVariants} viewport={{ once: true, amount: 0.3 }}
+                variants={textVariants}
                 className=" flex flex-col space-x-10 space-y-5 max-w-7xl mx-auto text-gray-500 text-lg font-semibold text-left mt-7 mb-7">
                     <h1 className=" mx-10">Imagine a messed up woman, still trying to figure out this thing called life and the purpose to it. Constantly in a tussle with her own self, constantly unsure about the choices, constantly confused.</h1>
                     <h1>On one of her monotonous days in the corporate world this woman, out of the blue, decides to go somewhere, on her own, just to clear her head, to get a grip. And that trip changed something inside her. As cliche as it may sound she was bitten by the travel bug</h1>
