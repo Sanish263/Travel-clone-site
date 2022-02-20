@@ -25,11 +25,15 @@ export default function Home({ posts }: Props) {
 
 <Banner />
 
-  <div 
+  <motion.div
+     initial={{ opacity: 0 }} 
+     whileInView = {{ opacity: 1 }}
+     viewport={{ once: true }}
+     transition = {{ type: "tween", duration: 0.6 }} 
   className="flex justify-center p-7 md:p-10 bg-[#777777]">
     <h1 className="relative font-semibold text-xl md:text-2xl lg:text-3xl text-white">Our Services</h1>
     <h1 className="absolute p-3 md:p-6 justify-center font-extrabold text-green-500">____________</h1>
-  </div>
+  </motion.div>
 
   <motion.div
                   initial={{ opacity: 0, y: 100 }} 
