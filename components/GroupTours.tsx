@@ -30,7 +30,7 @@ function GroupTours({ posts }: Props) {
                 <motion.div
                 initial={{ opacity: 0, y: 100 }} 
                 whileInView = {{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.3 }}
+                viewport={{ once: true, amount: 0.2 }}
                 transition = {{ type: "tween", duration: 0.7, delay: 0.2 }}
                 className=' group cursor-pointer border rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 ease-linear'>
                     <img
