@@ -6,9 +6,21 @@
     "start": "next start"
   },
   "dependencies": {
+    "@emotion/core": "^11.0.0",
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
+    "@heroicons/react": "^1.0.5",
+    "@mui/icons-material": "^5.4.2",
+    "@sanity/client": "^3.0.6",
+    "framer-motion": "^6.2.6",
     "next": "latest",
+    "next-sanity": "^0.4.0",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-hook-form": "^7.27.0",
+    "react-icons": "^4.3.1",
+    "react-portable-text": "^0.4.3",
+    "tailwind-scrollbar-hide": "^1.1.7"
   },
   "devDependencies": {
     "@types/node": "17.0.4",

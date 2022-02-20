@@ -1,82 +1,110 @@
 import Head from 'next/head'
+import Link from 'next/link';
+import { sanityClient, urlFor } from '../sanity'
+import { Post } from '../typings';
+import { CheckCircleIcon } from "@heroicons/react/outline";
+import Header from "../components/Header";
+import Banner from '../components/Banner';
+import GroupTours from '../components/GroupTours';
+import Footer from '../components/Footer';
+import { motion } from "framer-motion";
 
-export default function Home() {
+interface Props {
+  posts: Post[]
+}
+
+export default function Home({ posts }: Props) {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center py-2">
+    <div className=" flex w-full h-full bg-gray-50 md:bg-white">
       <Head>
-        <title>Create Next App</title>
+        <title>Travel</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <div className="overflow-y-scroll overflow-hidden scrollbar-hide scroll-smooth">
+<Header />
 
-      <main className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center">
-        <h1 className="text-6xl font-bold">
-          Welcome to{' '}
-          <a className="text-blue-600" href="https://nextjs.org">
-            Next.js!
-          </a>
-        </h1>
+<Banner />
 
-        <p className="mt-3 text-2xl">
-          Get started by editing{' '}
-          <code className="rounded-md bg-gray-100 p-3 font-mono text-lg">
-            pages/index.tsx
-          </code>
-        </p>
+  <div 
+  className="flex justify-center p-7 md:p-10 bg-[#777777]">
+    <h1 className="relative font-semibold text-xl md:text-2xl lg:text-3xl text-white">Our Services</h1>
+    <h1 className="absolute p-3 md:p-6 justify-center font-extrabold text-green-500">____________</h1>
+  </div>
 
-        <div className="mt-6 flex max-w-4xl flex-wrap items-center justify-around sm:w-full">
-          <a
-            href="https://nextjs.org/docs"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Documentation &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Find in-depth information about Next.js features and API.
-            </p>
-          </a>
+  <motion.div
+                  initial={{ opacity: 0, y: 100 }} 
+                  whileInView = {{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition = {{ type: "tween", duration: 0.7 }}
+  className="md:flex space-y-0 p-10 text-xl md:text-2xl font-semibold justify-around truncate">
+    <div className="flex-col md:space-y-20 space-y-10 md:pl-6 md:pt-9">
+      <div className=" flex flex-row items-center gap-3 ">
+        <CheckCircleIcon className="h-8 w-8 md:h-9 md:w-9 text-green-500 m-1 md:m-2 p-1 border rounded-full hover:border-green-500 ease-linear duration-300"/>
+        <h1 className=" ">Flight Bookings</h1>
+      </div>
+      <div className=" flex flex-row items-center gap-3 ">
+        <CheckCircleIcon className="h-8 w-8 md:h-9 md:w-9 text-green-500 m-1 md:m-2 p-1 border rounded-full hover:border-green-500 ease-linear duration-300"/>
+      <h1 className=" ">No hidden charges!!</h1>
+      </div>
+    </div>
 
-          <a
-            href="https://nextjs.org/learn"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Learn &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Learn about Next.js in an interactive course with quizzes!
-            </p>
-          </a>
+        <div className="flex-col md:space-y-20 space-y-10 md:pl-6 pt-9">
+      <div className=" flex flex-row items-center gap-3 ">
+        <CheckCircleIcon className="h-8 w-8 md:h-9 md:w-9 text-green-500 m-1 md:m-2 p-1 border rounded-full hover:border-green-500 ease-linear duration-300"/>
+        <h1 className=" ">100% Customisable Tour</h1>
+      </div>
+      <div className=" flex flex-row items-center gap-3 ">
+        <CheckCircleIcon className="h-8 w-8 md:h-9 md:w-9 text-green-500 m-1 md:m-2 p-1 border rounded-full hover:border-green-500 ease-linear duration-300"/>
+      <h1 className=" ">Customer Support 24*7 </h1>
+      </div>
+    </div>    
+  </motion.div>  
 
-          <a
-            href="https://github.com/vercel/next.js/tree/canary/examples"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Examples &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Discover and deploy boilerplate example Next.js projects.
-            </p>
-          </a>
+  <GroupTours posts={posts} />
 
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="mt-6 w-96 rounded-xl border p-6 text-left hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Deploy &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
+  <motion.div 
+                  initial={{ opacity: 0,}} 
+                  whileInView = {{ opacity: 1,}}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition = {{ type: "tween", duration: 0.4 }}
+  className=' bg-[url("https://images.unsplash.com/photo-1625315642929-3774ba1d1af4")] bg-fixed flex flex-col items-center justify-center h-96 w-full bg-cover bg-center mt-24'>
+      <motion.h1 
+                      initial={{ opacity: 0, y: 100 }} 
+                      whileInView = {{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, amount: 0.3 }}
+                      transition = {{ type: "tween", duration: 0.7 }}
+      className=" font-bold text-white text-4xl md:text-5xl text-center mt-10">Why Paakhi Travels?</motion.h1>
+      <motion.h3 
+                      initial={{ opacity: 0, y: 100 }} 
+                      whileInView = {{ opacity: 1, y: 0 }}
+                      viewport={{ once: true, amount: 0.2 }}
+                      transition = {{ type: "tween", duration: 0.7 }}
+      className=" text-white text-center md:text-lg mt-9 max-w-5xl mb-10">Paakhi provides you with a complete travel plan to cater your complete travel needs. Be it group tours, solo adventures, women centric travel plans or even senior citizens vacation, we got everything covered. The name Paakhi means a bird, and just like a bird we can take you to places you would have always dreamt of. Paakhi, by a traveler for the travelers.
+      <span className=' flex flex-col mt-2 md:mt-5'>Our founder curates every tour personally.</span>
+      </motion.h3>
+  </motion.div>
 
-      <footer className="flex h-24 w-full items-center justify-center border-t">
-        <a
-          className="flex items-center justify-center"
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className="ml-2 h-4" />
-        </a>
-      </footer>
+  <Footer />
+      </div>
     </div>
   )
 }
+
+export const getServerSideProps= async() => {
+  const query = `*[_type == 'post']{
+    _id,
+    title,
+    description,
+    mainImage,
+    postImage,
+    slug
+  }`;
+
+  const posts = await sanityClient.fetch(query);
+
+  return {
+    props: {
+      posts,
+    },
+  };
+};
