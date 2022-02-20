@@ -13,7 +13,7 @@ function GroupTours({ posts }: Props) {
         <motion.div 
         initial={{ opacity: 0, y: 100 }} 
         whileInView = {{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.1 }}
+        viewport={{ once: true }}
         transition = {{ type: "tween", duration: 0.4 }}
         className=' max-w-7xl mx-auto '>
             <div className=" flex items-center justify-center mt-16 space-y-10">
